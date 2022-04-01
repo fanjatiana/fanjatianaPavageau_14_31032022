@@ -1,10 +1,13 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./containers/Header";
 
 function App() {
   return (
     <>
-      <BrowserRouter></BrowserRouter>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
     </>
   );
 }
