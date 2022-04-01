@@ -1,24 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import "../styles/Home.css";
 const Home = () => {
   return (
     <>
       <main>
-        <h2>Welcome to your employee file management application</h2>
-        <p>Please choose an action</p>
-        <ul>
-          <li>
+        <div className="home_main_container">
+          <div className="intro_title">
+            <h2>Welcome to your employee file management application</h2>
+            <p>Please choose an action</p>
+          </div>
+          <div className="intro_links">
             <NavLink to="/create-employee" className="create_employee_btn">
               Add a new employee
             </NavLink>
-          </li>
-          <li>
             <NavLink to="/employee-list" className="employee_list_btn">
               Consult the list of employees
             </NavLink>
-          </li>
-        </ul>
+          </div>
+        </div>
       </main>
     </>
   );
