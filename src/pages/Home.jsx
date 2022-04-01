@@ -12,12 +12,12 @@ const Home = () => {
         <ul>
           <li>
             <NavLink to="/create-employee" className="create_employee_btn">
-              Create Employee
+              Ajouter un nouvel employé
             </NavLink>
           </li>
           <li>
             <NavLink to="/employee-list" className="employee_list_btn">
-              Employee List
+              Consulter la liste des employés
             </NavLink>
           </li>
         </ul>
