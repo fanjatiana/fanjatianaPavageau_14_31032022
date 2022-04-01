@@ -5,19 +5,17 @@ const Home = () => {
   return (
     <>
       <main>
-        <h2>
-          Bienvenue sur votre application de gestion de dossiers employés{" "}
-        </h2>
-        <p>Veuillez choisir une action</p>
+        <h2>Welcome to your employee file management application</h2>
+        <p>Please choose an action</p>
         <ul>
           <li>
             <NavLink to="/create-employee" className="create_employee_btn">
-              Ajouter un nouvel employé
+              Add a new employee
             </NavLink>
           </li>
           <li>
             <NavLink to="/employee-list" className="employee_list_btn">
-              Consulter la liste des employés
+              Consult the list of employees
             </NavLink>
           </li>
         </ul>
