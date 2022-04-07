@@ -24,6 +24,10 @@
  
 }
 
+.form_container div input {
+    height: 20px;
+}
+
 
 .btn-submit{
     display: flex;
