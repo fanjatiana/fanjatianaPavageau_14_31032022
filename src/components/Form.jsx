@@ -68,7 +68,7 @@ const Form = () => {
     city: { required: "city is required" },
 
     zipcode: {
-      required: "zipcode is required",
+      required: "zip code is required",
       pattern: {
         value: /^[0-9]{5}(?:(-| )[0-9]{4})?$/,
         message: "write 5 numbers like this : NNNNN",
@@ -81,107 +81,113 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleRegistration, /*handleError*/)}>
-      <div>
-        <label htmlFor="firstname">First Name</label>
-        <input
-          name="firstname"
-          type="text"
-          {...register("firstname", registerOptions.firstname)}
-        />
-        <p className="text-danger">
-          {errors?.firstname && errors.firstname.message}
-        </p>
+    <form
+      className="create-employee-form"
+      onSubmit={handleSubmit(handleRegistration /*handleError*/)}
+    >
+      <div className="form_container">
+        <div>
+          <label htmlFor="firstname">First Name</label>
+          <input
+            name="firstname"
+            type="text"
+            {...register("firstname", registerOptions.firstname)}
+          />
+          <p className="text-danger">
+            {errors?.firstname && errors.firstname.message}
+          </p>
+        </div>
+
+        <div>
+          <label htmlFor="lastname">Last Name</label>
+          <input
+            name="lastname"
+            type="text"
+            {...register("lastname", registerOptions.lastname)}
+          />
+          <p className="text-danger">
+            {errors?.lastname && errors.lastname.message}
+          </p>
+        </div>
+
+        <div>
+          <label htmlFor="dateofbirth">Date of Birth</label>
+          <input
+            type="date"
+            name="dateofbirth"
+            {...register("dateofbirth", registerOptions.dateofbirth)}
+          />
+          <p className="text-danger">
+            {errors?.dateofbirth && errors.dateofbirth.message}
+          </p>
+        </div>
+        <div>
+          <label htmlFor="startdate">Start Date</label>
+          <input
+            type="date"
+            name="startdate"
+            {...register("startdate", registerOptions.startdate)}
+          />
+          <p className="text-danger">
+            {errors?.startdate && errors.startdate.message}
+          </p>
+        </div>
+
+        <div>
+          <fieldset className="address">
+            <legend>Address</legend>
+            <div>
+              <label htmlFor="street">Street</label>
+              <input
+                type="text"
+                name="street"
+                {...register("street", registerOptions.street)}
+              />
+              <p className="text-danger">
+                {errors?.street && errors.street.message}
+              </p>
+            </div>
+
+            <div>
+              <label htmlFor="city">City</label>
+              <input
+                type="text"
+                name="city"
+                {...register("city", registerOptions.city)}
+              />
+              <p className="text-danger">
+                {errors?.city && errors.city.message}
+              </p>
+            </div>
+
+            <div>
+              <label htmlFor="state">State</label>
+              <SelectUsStates />
+            </div>
+
+            <div>
+              <label htmlFor="zip-code">Zip Code</label>
+              <input
+                type="text"
+                name="zipcode"
+                {...register("zipcode", registerOptions.zipcode)}
+              />
+              <p className="text-danger">
+                {errors?.zipcode && errors.zipcode.message}
+              </p>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <label for="department">Department</label>
+          <SelectDepartment />
+        </div>
       </div>
 
-      <div>
-        <label htmlFor="lastname">Last Name</label>
-        <input
-          name="lastname"
-          type="text"
-          {...register("lastname", registerOptions.lastname)}
-        />
-        <p className="text-danger">
-          {errors?.lastname && errors.lastname.message}
-        </p>
-      </div>
-
-      <div>
-        <label htmlFor="dateofbirth">Date of Birth</label>
-        <input
-          type="date"
-          name="dateofbirth"
-          {...register("dateofbirth", registerOptions.dateofbirth)}
-        />
-        <p className="text-danger">
-          {errors?.dateofbirth && errors.dateofbirth.message}
-        </p>
-      </div>
-      <div>
-        <label htmlFor="startdate">Start Date</label>
-        <input
-          type="date"
-          name="startdate"
-          {...register("startdate", registerOptions.startdate)}
-        />
-        <p className="text-danger">
-          {errors?.startdate && errors.startdate.message}
-        </p>
-      </div>
-
-      <div>
-        <fieldset className="address">
-          <legend>Address</legend>
-          <div>
-            <label htmlFor="street">Street</label>
-            <input
-              type="text"
-              name="street"
-              {...register("street", registerOptions.street)}
-            />
-            <p className="text-danger">
-              {errors?.street && errors.street.message}
-            </p>
-          </div>
-
-          <div>
-            <label htmlFor="city">City</label>
-            <input
-              type="text"
-              name="city"
-              {...register("city", registerOptions.city)}
-            />
-            <p className="text-danger">{errors?.city && errors.city.message}</p>
-          </div>
-
-          <div>
-            <label htmlFor="state">State</label>
-            <SelectUsStates />
-          </div>
-
-          <div>
-            <label htmlFor="zip-code">Zip Code</label>
-            <input
-              type="text"
-              name="zipcode"
-              {...register("zipcode", registerOptions.zipcode)}
-            />
-            <p className="text-danger">
-              {errors?.zipcode && errors.zipcode.message}
-            </p>
-          </div>
-        </fieldset>
-      </div>
-
-      <div>
-        <label for="department">Department</label>
-        <SelectDepartment />
-      </div>
-
-      <div>
+      <div className="btn-submit">
         <button>Submit</button>
       </div>
-
     </form>
   );
 };
