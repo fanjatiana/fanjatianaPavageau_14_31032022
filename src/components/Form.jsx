@@ -1,84 +1,21 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import Select from "react-select";
+import { departments, states } from "../constants/arrays";
+import { registerOptions } from "../constants/objects";
 import "../styles/Form.css";
-import SelectDepartment from "./SelectDepartment";
-import SelectUsStates from "./SelectUsStates";
 
 const Form = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
   const handleRegistration = (data) => console.log(data);
   //const handleError = (errors) => {};
 
-  const registerOptions = {
-    firstname: {
-      required: "first name is required",
-      maxLength: {
-        value: 30,
-        message: "firstname must have at least 30 characters",
-      },
-      pattern: {
-        value: /^[A-Za-z ,.'-]+$/i,
-        message: "firstname must no have number",
-      },
-    },
-
-    lastname: {
-      required: "last name is required",
-      maxLength: {
-        value: 30,
-        message: "lastname must have at least 30 characters",
-      },
-      pattern: {
-        value: /^[A-Za-z ,.'-]+$/i,
-        message: "lastname must no have number",
-      },
-    },
-
-    dateofbirth: {
-      required: "date of birth is required",
-      min: {
-        value: "1940-01-01",
-        message: "bad date of birth",
-      },
-      max: {
-        value: "2004-01-01",
-        message: "bad date of birth",
-      },
-    },
-
-    startdate: {
-      required: "start date is required",
-      min: {
-        value: "1940-01-01",
-        message: "bad date",
-      },
-    },
-
-    street: {
-      required: "street is required",
-      pattern: {
-        value: "([0-9a-zA-Z,. ]*) ?([0-9]{5}) ?([a-zA-Z]*)",
-        message: "street no have caracteres speciaux",
-      },
-    },
-    city: { required: "city is required" },
-
-    zipcode: {
-      required: "zip code is required",
-      pattern: {
-        value: /^[0-9]{5}(?:(-| )[0-9]{4})?$/,
-        message: "write 5 numbers like this : NNNNN",
-      },
-      max: {
-        value: 99950,
-        message: "bad zip code",
-      },
-    },
-  };
+  
 
   return (
     <form
@@ -86,7 +23,7 @@ const Form = () => {
       onSubmit={handleSubmit(handleRegistration /*handleError*/)}
     >
       <div className="form_container">
-        <div>
+        <div className="input">
           <label htmlFor="firstname">First Name</label>
           <input
             name="firstname"
@@ -98,7 +35,7 @@ const Form = () => {
           </p>
         </div>
 
-        <div>
+        <div className="input">
           <label htmlFor="lastname">Last Name</label>
           <input
             name="lastname"
@@ -110,7 +47,7 @@ const Form = () => {
           </p>
         </div>
 
-        <div>
+        <div className="input">
           <label htmlFor="dateofbirth">Date of Birth</label>
           <input
             type="date"
@@ -121,7 +58,7 @@ const Form = () => {
             {errors?.dateofbirth && errors.dateofbirth.message}
           </p>
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="startdate">Start Date</label>
           <input
             type="date"
@@ -136,7 +73,7 @@ const Form = () => {
         <div>
           <fieldset className="address">
             <legend>Address</legend>
-            <div>
+            <div className="input">
               <label htmlFor="street">Street</label>
               <input
                 type="text"
@@ -147,8 +84,7 @@ const Form = () => {
                 {errors?.street && errors.street.message}
               </p>
             </div>
-
-            <div>
+            <div className="input">
               <label htmlFor="city">City</label>
               <input
                 type="text"
@@ -159,13 +95,22 @@ const Form = () => {
                 {errors?.city && errors.city.message}
               </p>
             </div>
-
-            <div>
+            <div className="select">
               <label htmlFor="state">State</label>
-              <SelectUsStates />
+              <Controller
+                name="states"
+                control={control}
+                defaultValue=""
+                rules={registerOptions.states}
+                render={({ field }) => (
+                  <Select options={states} {...field} label="Text field" />
+                )}
+              />
+              <small className="text-danger">
+                {errors?.states && errors.states.message}
+              </small>
             </div>
-
-            <div>
+            <div className="input">
               <label htmlFor="zip-code">Zip Code</label>
               <input
                 type="text"
@@ -181,7 +126,18 @@ const Form = () => {
 
         <div>
           <label for="department">Department</label>
-          <SelectDepartment />
+          <Controller
+            name="department"
+            control={control}
+            defaultValue=""
+            rules={registerOptions.department}
+            render={({ field }) => (
+              <Select options={departments} {...field} label="Text field" />
+            )}
+          />
+          <small className="text-danger">
+            {errors?.department && errors.department.message}
+          </small>
         </div>
       </div>
 
