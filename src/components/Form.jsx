@@ -1,19 +1,34 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
+import { useAppDispatch } from "../app/hooks";
 import { departments, states } from "../constants/arrays";
 import { registerOptions } from "../constants/objects";
+import { addNewEmployee } from "../features/employee/employeeSlice";
 import "../styles/Form.css";
 
 const Form = () => {
+
+  const dispatch = useAppDispatch()
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) => console.log(data);
-  //const handleError = (errors) => {};
+  const handleRegistration = (data) => 
+//console.log(data)
+  dispatch(addNewEmployee([{
+    firstName: data.firstname,
+    lastName: data.lastname,
+    dateOfBirth: data.dateofbirth,
+    startDate: data.startdate,
+    department: data.department,
+    street: data.street,
+    city: data.city,
+    state: data.state,
+    zipCode: data.zipcode
+  }]))
 
   
 
