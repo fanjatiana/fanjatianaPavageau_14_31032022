@@ -8,34 +8,39 @@ import { addNewEmployee } from "../features/employee/employeeSlice";
 import "../styles/Form.css";
 
 const Form = () => {
-
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) => 
-//console.log(data)
-  dispatch(addNewEmployee([{
-    firstName: data.firstname,
-    lastName: data.lastname,
-    dateOfBirth: data.dateofbirth,
-    startDate: data.startdate,
-    department: data.department,
-    street: data.street,
-    city: data.city,
-    state: data.state,
-    zipCode: data.zipcode
-  }]))
 
-  
+  const handleError = (errors) => {};
+
+  const handleRegistration = (data) => {
+    console.log(data)
+    dispatch(
+      addNewEmployee({
+        firstName: data.firstname,
+        lastName: data.lastname,
+        dateOfBirth: data.dateofbirth,
+        startDate: data.startdate,
+        department: data.department,
+        street: data.street,
+        city: data.city,
+        state: data.state,
+        zipCode: data.zipcode,
+      })
+    );
+  };
+
+
 
   return (
     <form
       className="create-employee-form"
-      onSubmit={handleSubmit(handleRegistration /*handleError*/)}
+      onSubmit={handleSubmit(handleRegistration,handleError)}
     >
       <div className="form_container">
         <div className="input">
@@ -140,7 +145,7 @@ const Form = () => {
         </div>
 
         <div>
-          <label for="department">Department</label>
+          <label htmlFor="department">Department</label>
           <Controller
             name="department"
             control={control}
