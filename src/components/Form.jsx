@@ -19,7 +19,7 @@ const Form = () => {
   const handleError = (errors) => {};
 
   const handleRegistration = (data) => {
-    console.log(data)
+    console.log(data.states)
     dispatch(
       addNewEmployee({
         firstName: data.firstname,
@@ -29,7 +29,7 @@ const Form = () => {
         department: data.department,
         street: data.street,
         city: data.city,
-        state: data.state,
+        states: data.states,
         zipCode: data.zipcode,
       })
     );
@@ -116,7 +116,7 @@ const Form = () => {
               </p>
             </div>
             <div className="select">
-              <label htmlFor="state">State</label>
+              <label htmlFor="states">States</label>
               <Controller
                 name="states"
                 control={control}
