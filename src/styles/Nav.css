@@ -12,3 +12,11 @@
   display: flex;
   justify-content: space-around;
 }
+
+.nav_links a:hover {
+  border-bottom: 1px #FFF solid;
+}
+
+.active{
+  border-bottom: 1px #FFF solid;
+}

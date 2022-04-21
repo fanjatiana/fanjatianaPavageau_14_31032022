@@ -13,7 +13,6 @@ const CreateEmployee = () => {
         <h2>Create Employee</h2>
         <Form />
       </main>
-      <Footer />
     </>
   );
 };

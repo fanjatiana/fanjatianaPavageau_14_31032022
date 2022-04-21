@@ -1,13 +1,16 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { useAppDispatch } from "../app/hooks";
 import { departments, states } from "../constants/arrays";
 import { registerOptions } from "../constants/objects";
 import { addNewEmployee } from "../features/employee/employeeSlice";
+
 import "../styles/Form.css";
 
 const Form = () => {
+ const navigate = useNavigate()
   const dispatch = useAppDispatch();
   const {
     register,
@@ -33,6 +36,7 @@ const Form = () => {
         zipCode: data.zipcode,
       })
     );
+    navigate("/employee-list");
   };
 
 
@@ -90,7 +94,7 @@ const Form = () => {
           </p>
         </div>
 
-        <div>
+        <div className="field_address">
           <fieldset className="address">
             <legend>Address</legend>
             <div className="input">
@@ -144,7 +148,7 @@ const Form = () => {
           </fieldset>
         </div>
 
-        <div>
+        <div className="select_department">
           <label htmlFor="department">Department</label>
           <Controller
             name="department"
