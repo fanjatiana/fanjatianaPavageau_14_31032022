@@ -2,6 +2,8 @@ import React from "react";
 import { useTable, usePagination } from "react-table";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import Table from "../components/Table";
+import Footer from "../containers/Footer";
+import Header from "../containers/Header";
 const EmployeeList = () => {
   const columns = React.useMemo(
     () => [
@@ -47,7 +49,12 @@ const EmployeeList = () => {
     const employee = useAppSelector(state => state.employees);
     const data = React.useMemo(() => employee, [])
   return (
+    <>
+    <Header />
     <Table columns={columns} data={data} />
+    <Footer />
+    </>
+    
   )
 };
 
