@@ -45,52 +45,59 @@ const Table = ({ columns, data }) => {
         globalFilter={state.globalFilter}
         setGlobalFilter={setGlobalFilter}
       />
-      <table {...getTableProps()} style={{ border: "solid 1px #000" }}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                  style={{
-                    background: "#FFF",
-                    color: "#000",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {column.render("Header")}
-                  <span>
-                    {column.isSorted?(column.isSortedDesc ? "▼" : "▲") : ""}
-                  </span>
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: "10px",
-                        border: "solid 1px gray",
-                        background: "#FFF",
-                      }}
-                    >
-                      {cell.render("Cell")}
-                    </td>
-                  );
-                })}
+      <div className="table">
+        <table {...getTableProps()} style={{ border: "solid 1px #000" }}>
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th className="column_title"
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                    style={{
+                      background: "rgba(255, 255, 255, 0.125)",
+                      color: "#FFF",
+                      fontWeight: "bold",
+                      height:"40px",
+                      cursor:"pointer"
+
+                    }}
+                  >
+                    {column.render("Header")}
+                    <span style={{
+                      marginLeft:"0.5em"
+                    }}>
+                      {column.isSorted ? (column.isSortedDesc ? "▼" : "▲") : ""}
+                    </span>
+                  </th>
+                ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {page.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td
+                        {...cell.getCellProps()}
+                        style={{
+                          padding: "10px",
+                          border: "solid 1px gray",
+                          background: "#FFF",
+                        }}
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <div className="pagination">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {"<<"}

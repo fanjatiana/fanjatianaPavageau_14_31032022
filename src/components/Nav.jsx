@@ -5,7 +5,7 @@ const Nav = () => {
   const [isActive, setActive] = useState(false);
   
   const handleClick = () => {
-    setActive(!isActive);
+    setActive(isActive);
   }
   return (
     <div className="block_nav_links">
@@ -17,12 +17,12 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/create-employee" className={isActive? ' create_employee_link active' : "create_employee_link"} onClick={handleClick} >
+            <NavLink to="/create-employee" className={isActive? ' active' : "create_employee_link"} onClick={handleClick} >
               Create Employee
             </NavLink>
           </li>
           <li>
-            <NavLink to="/employee-list" className={isActive? ' employee_list_link active' : "employee_list_link"} onClick={handleClick}>
+            <NavLink to="/employee-list" className={isActive? ' active' : "employee_list_link"} onClick={handleClick}>
               Employee List
             </NavLink>
           </li>
