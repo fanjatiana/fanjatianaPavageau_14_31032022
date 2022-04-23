@@ -110,7 +110,7 @@ const Table = ({ columns, data }) => {
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
           {">>"}
         </button>{" "}
-        <span>
+        <span style={{color:"#FFF"}}>
           Page{" "}
           <strong>
             {state.pageIndex + 1} of {pageOptions.length}

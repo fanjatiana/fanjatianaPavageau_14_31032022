@@ -5,6 +5,7 @@ import LogoHRnet from "../images/logo_hrnet.png";
 import Arrow from "../images/arrow.svg";
 import AddEmployee from "../images/add_employee.svg";
 import List from "../images/employees_list.svg";
+
 const Home = () => {
   return (
     <>

@@ -10,9 +10,8 @@ const Header = () => {
       <div className="banner">
         <div className="block_logo_hrnet">
           <NavLink to="/" className="logo_hrnet_link">
-            <h1>
-              <img src={LogoHRnet} alt="logo de l'application HRnet" />
-            </h1>
+            <h1>HRnet</h1>
+            <img src={LogoHRnet} alt="HRnet" />
           </NavLink>
         </div>
         <Nav />

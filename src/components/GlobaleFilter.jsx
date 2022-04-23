@@ -15,7 +15,7 @@ const GlobaleFilter = ({
 
   return (
     <div className="search_bar">
-      <span>
+      <span style={{color:"#FFF"}}>
         Search:{" "}
         <input
           value={value || ""}

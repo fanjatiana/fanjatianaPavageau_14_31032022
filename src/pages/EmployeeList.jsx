@@ -51,6 +51,7 @@ const EmployeeList = () => {
     <>
       <Header />
       <main className="employees_list_container">
+        <h2>Employee List</h2>
         <Table columns={columns} data={data} />
       </main>
     </>
