@@ -8,7 +8,6 @@ import {
 import GlobaleFilter from "./GlobaleFilter";
 
 const Table = ({ columns, data }) => {
-  console.log(data);
   const {
     state,
     preGlobalFilteredRows,

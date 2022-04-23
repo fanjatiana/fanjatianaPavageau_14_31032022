@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
@@ -8,6 +8,7 @@ import { registerOptions } from "../constants/objects";
 import { addNewEmployee } from "../features/employee/employeeSlice";
 
 import "../styles/Form.css";
+import Modal from "./Modal";
 
 const Form = () => {
  const navigate = useNavigate()
@@ -22,7 +23,6 @@ const Form = () => {
   const handleError = (errors) => {};
 
   const handleRegistration = (data) => {
-    console.log(data.states)
     dispatch(
       addNewEmployee({
         firstName: data.firstname,
@@ -36,9 +36,14 @@ const Form = () => {
         zipCode: data.zipcode,
       })
     );
-    navigate("/employee-list");
+    setIsShowing(true);
   };
 
+  const [isShowing, setIsShowing] = useState(false);
+  const handleClickToClose = () => {
+    setIsShowing(!isShowing);
+    navigate("/employee-list");
+}
 
 
   return (
@@ -168,6 +173,10 @@ const Form = () => {
       <div className="btn-submit">
         <button>Submit</button>
       </div>
+      {
+        isShowing ? ( <Modal onClick ={handleClickToClose}/> ) : <div></div>
+      }
+     
     </form>
   );
 };

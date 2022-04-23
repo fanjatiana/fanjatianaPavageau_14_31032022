@@ -1,8 +1,6 @@
 import React from "react";
-import { useTable, usePagination } from "react-table";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../app/hooks";
 import Table from "../components/Table";
-import Footer from "../containers/Footer";
 import Header from "../containers/Header";
 import "../styles/EmployeesList.css";
 const EmployeeList = () => {
