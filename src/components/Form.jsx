@@ -173,14 +173,19 @@ const Form = () => {
         <div className="btn-submit">
           <button>Submit</button>
         </div>
-        <div>
+       
+      </form>
+      <div style={{
+        position:"absolute",
+        width:"70%",
+        height:"100vh"
+        }}>
           {isShowing ? (
             <>
               <FormModal onClick={handleClickToClose} />
             </>
           ) : null}
         </div>
-      </form>
     </>
   );
 };
