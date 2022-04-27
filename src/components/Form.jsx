@@ -7,7 +7,6 @@ import { useAppDispatch } from "../app/hooks";
 import { departments, states } from "../constants/arrays";
 import { registerOptions } from "../constants/objects";
 import { addNewEmployee } from "../features/employee/employeeSlice";
-import ReactDOM from "react-dom";
 
 import "../styles/Form.css";
 
@@ -17,7 +16,8 @@ const Form = () => {
     register,
     handleSubmit,
     control,
-    formState: { errors },reset
+    formState: { errors },
+    reset,
   } = useForm();
 
   const handleError = (errors) => {};
@@ -37,13 +37,12 @@ const Form = () => {
       })
     );
     setIsShowing(true);
-   
   };
 
   const [isShowing, setIsShowing] = useState(false);
   const handleClickToClose = () => {
     setIsShowing(!isShowing);
-    reset()
+    reset();
   };
 
   return (
@@ -174,17 +173,14 @@ const Form = () => {
         <div className="btn-submit">
           <button>Submit</button>
         </div>
+        <div>
+          {isShowing ? (
+            <>
+              <FormModal onClick={handleClickToClose} />
+            </>
+          ) : null}
+        </div>
       </form>
-      <div>
-        {isShowing
-          ? ReactDOM.createPortal(
-              <>
-                <FormModal onClick={handleClickToClose} />
-              </>,
-              document.body
-            )
-          : null}
-      </div>
     </>
   );
 };
