@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ onClick }) => {
+const Modalx = ({ onClick }) => {
   return (
     <div
       style={{
@@ -40,4 +40,4 @@ const Modal = ({ onClick }) => {
   );
 };
 
-export default Modal;
+export default Modalx;
