@@ -12,7 +12,7 @@ const Home = () => {
       <main className="home_main">
         <div className="home_main_container">
           <div className="logo_main_container">
-            <img src={LogoHRnet} alt="logo de l'application HRnet" />
+            <img src={LogoHRnet} alt="logo de l'application HRnet"/>
           </div>
           <div className="intro_title">
             <h2>Welcome to your employee file management application</h2>
@@ -21,16 +21,16 @@ const Home = () => {
           <div className="intro_links">
             <NavLink to="/create-employee" className="create_employee_btn">
               <div>
-                <img src={AddEmployee} alt="add employee icon" />
+                <img src={AddEmployee} alt="add employee icon" className="icon"/>
                 <h3>Add a new employee</h3>
-                <img className="arrow_icon" src={Arrow} alt="arrow icone" />
+                <img className="icon" src={Arrow} alt="arrow icone"  />
               </div>
             </NavLink>
             <NavLink to="/employee-list" className="employee_list_btn">
               <div>
-                <img src={List} alt="list icone" />
+                <img src={List} alt="list icone" className="icon"/>
                 <h3>Consult the list of employees</h3>
-                <img className="arrow_icon" src={Arrow} alt="arrow icon" />
+                <img className="icon" src={Arrow} alt="arrow icon" />
               </div>
             </NavLink>
           </div>

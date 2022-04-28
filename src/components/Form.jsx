@@ -45,6 +45,15 @@ const Form = () => {
     reset();
   };
 
+  const colourStyles = {
+    placeholder: (defaultStyles) => {
+        return {
+            ...defaultStyles,
+            color: '#000',
+        }
+    }
+}
+
   return (
     <>
       <form
@@ -55,6 +64,7 @@ const Form = () => {
           <div className="input">
             <label htmlFor="firstname">First Name</label>
             <input
+              id="firstname"
               name="firstname"
               type="text"
               {...register("firstname", registerOptions.firstname)}
@@ -67,6 +77,7 @@ const Form = () => {
           <div className="input">
             <label htmlFor="lastname">Last Name</label>
             <input
+              id="lastname"
               name="lastname"
               type="text"
               {...register("lastname", registerOptions.lastname)}
@@ -79,6 +90,7 @@ const Form = () => {
           <div className="input">
             <label htmlFor="dateofbirth">Date of Birth</label>
             <input
+              id="dateofbirth"
               type="date"
               name="dateofbirth"
               {...register("dateofbirth", registerOptions.dateofbirth)}
@@ -90,6 +102,7 @@ const Form = () => {
           <div className="input">
             <label htmlFor="startdate">Start Date</label>
             <input
+              id="startdate"
               type="date"
               name="startdate"
               {...register("startdate", registerOptions.startdate)}
@@ -105,6 +118,7 @@ const Form = () => {
               <div className="input">
                 <label htmlFor="street">Street</label>
                 <input
+                  id="street"
                   type="text"
                   name="street"
                   {...register("street", registerOptions.street)}
@@ -116,6 +130,7 @@ const Form = () => {
               <div className="input">
                 <label htmlFor="city">City</label>
                 <input
+                  id="city"
                   type="text"
                   name="city"
                   {...register("city", registerOptions.city)}
@@ -125,14 +140,14 @@ const Form = () => {
                 </p>
               </div>
               <div className="select">
-                <label htmlFor="states">States</label>
+                <label htmlFor="react-select-3-input">States</label>
                 <Controller
                   name="states"
                   control={control}
                   defaultValue=""
                   rules={registerOptions.states}
                   render={({ field }) => (
-                    <Select options={states} {...field} label="Text field" />
+                    <Select options={states} {...field} label="react-select-3-input" styles={colourStyles}/>
                   )}
                 />
                 <small className="text-danger">
@@ -142,6 +157,7 @@ const Form = () => {
               <div className="input">
                 <label htmlFor="zip-code">Zip Code</label>
                 <input
+                  id="zip-code"
                   type="text"
                   name="zipcode"
                   {...register("zipcode", registerOptions.zipcode)}
@@ -154,14 +170,14 @@ const Form = () => {
           </div>
 
           <div className="select_department">
-            <label htmlFor="department">Department</label>
+            <label htmlFor="react-select-5-input">Department</label>
             <Controller
               name="department"
               control={control}
               defaultValue=""
               rules={registerOptions.department}
               render={({ field }) => (
-                <Select options={departments} {...field} label="Text field" />
+                <Select options={departments} {...field} label="react-select-5-input" styles={colourStyles} />
               )}
             />
             <small className="text-danger">
