@@ -6,6 +6,11 @@
     width: 80%;
 }
 
+.create-employee-container h3{
+    color: #fff;
+    font-size: 1.5em;
+}
 .create-employee-form{
     width: 50%;
 }
+

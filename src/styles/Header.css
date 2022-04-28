@@ -1,31 +1,29 @@
-header{
-    background-color:#020f02;
-    width: 10%;
-    border-right: 1px #2D2D2D solid;
-   /* background-image: url("../images//wallpaper.jpeg");*/
+header {
+  background-color: #020f02;
+  width: 10%;
+  border-right: 1px #2d2d2d solid;
+  /* background-image: url("../images//wallpaper.jpeg");*/
 }
 
-.banner{
-    height:  100%;
+.banner {
+  height: 100%;
 }
 
-.block_logo_hrnet{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20%;
+.block_logo_hrnet {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
 }
 
-.block_logo_hrnet h1{
-    margin: 0;
-    display: none;
+.block_logo_hrnet h1 {
+  margin: 0;
+  display: none;
 }
 
-
-.block_logo_hrnet img{
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
- 
+.block_logo_hrnet img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
 }

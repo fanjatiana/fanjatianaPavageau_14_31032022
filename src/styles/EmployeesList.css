@@ -12,11 +12,11 @@
   justify-content: center;
 }
 
-.employees_list_container h2{
+.employees_list_container h3{
   color: #FFF;
   text-align: center;
   margin: 1em 0;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .search_bar {

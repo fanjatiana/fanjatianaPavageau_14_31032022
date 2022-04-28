@@ -15,9 +15,10 @@ const GlobaleFilter = ({
 
   return (
     <div className="search_bar">
-      <span style={{color:"#FFF"}}>
-        Search:{" "}
+      <span style={{ color: "#FFF" }}>
+        <label htmlFor="search">Search: </label>
         <input
+          id="search"
           value={value || ""}
           onChange={(e) => {
             setValue(e.target.value);

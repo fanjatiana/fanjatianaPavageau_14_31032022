@@ -10,7 +10,7 @@ const CreateEmployee = () => {
     <>
       <Header />
       <main className="create-employee-container">
-        <h2>Create Employee</h2>
+        <h3>Create Employee</h3>
         <Form />
       </main>
     </>

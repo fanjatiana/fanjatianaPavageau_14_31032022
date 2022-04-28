@@ -12,6 +12,7 @@ const Home = () => {
       <main className="home_main">
         <div className="home_main_container">
           <div className="logo_main_container">
+            <h1>HRnet</h1>
             <img src={LogoHRnet} alt="logo de l'application HRnet"/>
           </div>
           <div className="intro_title">

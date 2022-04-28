@@ -21,7 +21,7 @@ const Nav = () => {
               onClick={handleClick}
             >
               <img src={AddEmployee} alt="add employee icon" />
-              <h3>Create Employee</h3>
+              <h2>Create Employee</h2>
             </NavLink>
           </li>
           <li>
@@ -31,13 +31,13 @@ const Nav = () => {
               onClick={handleClick}
             >
               <img src={List} alt="list icone" />
-              <h3>Employee List</h3>
+              <h2>Employee List</h2>
             </NavLink>
           </li>
           <li>
             <NavLink to="*">
               <img src={Setting} alt="setting icon" />
-              <h3>Setting</h3>
+              <h2>Setting</h2>
             </NavLink>
           </li>
         </ul>

@@ -50,21 +50,23 @@ const Table = ({ columns, data }) => {
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <th className="column_title"
+                  <th
+                    className="column_title"
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     style={{
                       background: "rgba(255, 255, 255, 0.125)",
                       color: "#FFF",
                       fontWeight: "bold",
-                      height:"40px",
-                      cursor:"pointer"
-
+                      height: "40px",
+                      cursor: "pointer",
                     }}
                   >
                     {column.render("Header")}
-                    <span style={{
-                      marginLeft:"0.5em"
-                    }}>
+                    <span
+                      style={{
+                        marginLeft: "0.5em",
+                      }}
+                    >
                       {column.isSorted ? (column.isSortedDesc ? "▼" : "▲") : ""}
                     </span>
                   </th>
@@ -110,13 +112,17 @@ const Table = ({ columns, data }) => {
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
           {">>"}
         </button>{" "}
-        <span style={{color:"#FFF"}}>
+        <span style={{ color: "#FFF" }}>
           Page{" "}
           <strong>
             {state.pageIndex + 1} of {pageOptions.length}
           </strong>{" "}
         </span>
+        <label htmlFor="select" style={{ display: "none" }}>
+          page size
+        </label>
         <select
+          id="select"
           value={state.pageSize}
           onChange={(e) => {
             setPageSize(Number(e.target.value));
