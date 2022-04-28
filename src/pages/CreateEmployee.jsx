@@ -1,6 +1,5 @@
 import React from "react";
 import Form from "../components/Form";
-import Footer from "../containers/Footer";
 import Header from "../containers/Header";
 
 import "../styles/CreateEmployee.css";

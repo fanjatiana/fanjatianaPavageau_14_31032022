@@ -34,12 +34,6 @@ const Nav = () => {
               <h2>Employee List</h2>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="*">
-              <img src={Setting} alt="setting icon" />
-              <h2>Setting</h2>
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </div>
