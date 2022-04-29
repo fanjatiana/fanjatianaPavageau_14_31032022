@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import Modal from "react-form-validation-message";
 import { useForm, Controller } from "react-hook-form";
-import FormModal from "react-nmp-modal";
+import Modal from "react-nmp-modal";
 import Select from "react-select";
 import { useAppDispatch } from "../app/hooks";
 import { departments, states } from "../constants/arrays";
@@ -47,12 +47,28 @@ const Form = () => {
 
   const colourStyles = {
     placeholder: (defaultStyles) => {
-        return {
-            ...defaultStyles,
-            color: '#000',
-        }
-    }
-}
+      return {
+        ...defaultStyles,
+        color: "#000",
+      };
+    },
+  };
+
+  const myStylesModal = {
+    modalContainerBg: "rgba(0, 0, 0, 0.7)",
+    bg: "#fff",
+    width: "200px",
+    height: "200px",
+    radius: "5px",
+    messageColor: "#000",
+    messageFontSize: "1em",
+    buttonColor: "#000",
+    buttonBg: "#fff",
+    buttonWidth: "30px",
+    buttonHeight: "30px",
+    buttonHoverColor: "#fff",
+    buttonHoverBg: "#000",
+  };
 
   return (
     <>
@@ -147,7 +163,12 @@ const Form = () => {
                   defaultValue=""
                   rules={registerOptions.states}
                   render={({ field }) => (
-                    <Select options={states} {...field} label="react-select-3-input" styles={colourStyles}/>
+                    <Select
+                      options={states}
+                      {...field}
+                      label="react-select-3-input"
+                      styles={colourStyles}
+                    />
                   )}
                 />
                 <small className="text-danger">
@@ -177,7 +198,12 @@ const Form = () => {
               defaultValue=""
               rules={registerOptions.department}
               render={({ field }) => (
-                <Select options={departments} {...field} label="react-select-5-input" styles={colourStyles} />
+                <Select
+                  options={departments}
+                  {...field}
+                  label="react-select-5-input"
+                  styles={colourStyles}
+                />
               )}
             />
             <small className="text-danger">
@@ -192,7 +218,11 @@ const Form = () => {
       </form>
       {isShowing ? (
         <>
-          <FormModal onClick={handleClickToClose} />
+          <Modal
+            modalStyles={myStylesModal}
+            onClick={handleClickToClose}
+            messageText="Employee created !"
+          />
         </>
       ) : null}
     </>
