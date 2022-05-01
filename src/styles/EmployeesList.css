@@ -12,8 +12,8 @@
   justify-content: center;
 }
 
-.employees_list_container h3{
-  color: #FFF;
+.employees_list_container h3 {
+  color: #fff;
   text-align: center;
   margin: 1em 0;
   font-size: 1.5em;
@@ -21,16 +21,31 @@
 
 .search_bar {
   margin-bottom: 1em;
-  width: 20%;
   text-align: center;
 }
 
-.table, table{
-    border:1px #FFF solid;
-    width: 100%;
+.table,
+table {
+  border: 1px #fff solid;
+  width: 100%;
 }
-
 
 .pagination {
   margin-top: 1em;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .employees_list_container {
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  .column_title {
+    font-size: 0.8em;
+  }
+
+  .table,
+  table {
+    width: auto;
+  }
 }

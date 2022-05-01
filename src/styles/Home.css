@@ -97,3 +97,29 @@
 
 
 
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+
+  .home_main{
+    width: 100%;
+    margin:0;
+    height: 100vh;
+  }
+
+  .home_main_container{
+    margin:0;
+    justify-content: center;
+  }
+
+  .logo_main_container{
+    padding: 0;
+  }
+
+  .intro_links a {
+    width: 250px;
+  }
+
+}
+
+
+
+

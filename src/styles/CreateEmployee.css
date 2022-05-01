@@ -14,3 +14,14 @@
     width: 50%;
 }
 
+
+@media all and (min-width: 320px) and (max-width: 1024px) {
+    .create-employee-container{
+        width: 100%;
+        margin:1em 0;
+    }
+
+    .create-employee-form{
+        width: 90%;
+    }
+}

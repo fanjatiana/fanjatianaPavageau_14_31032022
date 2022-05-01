@@ -32,3 +32,13 @@ body {
     color: #FFF;
   }
   
+
+  @media screen and (min-width: 320px) and (max-width: 1024px) {
+
+    #root{
+      flex-direction: column;
+      justify-content: inherit;
+      align-items: center;
+    }
+    
+  }

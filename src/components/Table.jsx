@@ -84,7 +84,7 @@ const Table = ({ columns, data }) => {
                       <td
                         {...cell.getCellProps()}
                         style={{
-                          padding: "10px",
+                          padding: "5px",
                           border: "solid 1px gray",
                           background: "#FFF",
                         }}
@@ -128,7 +128,7 @@ const Table = ({ columns, data }) => {
             setPageSize(Number(e.target.value));
           }}
         >
-          {[5, 10, 20].map((pageSize) => (
+          {[5, 10, 20, 50].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize}
             </option>
