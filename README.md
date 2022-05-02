@@ -1,4 +1,6 @@
-![screenshot](/src/images/logo_hrnet3.png)
+<p align="center">
+  <img width="200" height="200" src="/src/images/logo_hrnet3.png">
+</p>
 
 This repo contains all the source code of the HRnet application, an internal web application which manages employee records.
 
