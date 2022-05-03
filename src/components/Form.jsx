@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-//import Modal from "react-form-validation-message";
 import { useForm, Controller } from "react-hook-form";
 import Modal from "react-nmp-modal";
 import Select from "react-select";
 import { useAppDispatch } from "../app/hooks";
 import { departments, states } from "../constants/arrays";
 import { registerOptions } from "../constants/objects";
+import { colourStyles, myStylesModal } from "../constants/styles_custom";
 import { addNewEmployee } from "../features/employee/employeeSlice";
-
 import "../styles/Form.css";
 
+// employee creation form
 const Form = () => {
   const dispatch = useAppDispatch();
+
+  // form validation management
   const {
     register,
     handleSubmit,
@@ -19,9 +21,10 @@ const Form = () => {
     formState: { errors },
     reset,
   } = useForm();
+  const handleError = (errors) => console.log(errors);
 
-  const handleError = (errors) => {};
-
+  /* function allowing data to be sent to the store 
+   and display of the successful send message */
   const handleRegistration = (data) => {
     dispatch(
       addNewEmployee({
@@ -39,35 +42,11 @@ const Form = () => {
     setIsShowing(true);
   };
 
+  // function that closes the modal
   const [isShowing, setIsShowing] = useState(false);
   const handleClickToClose = () => {
     setIsShowing(!isShowing);
     reset();
-  };
-
-  const colourStyles = {
-    placeholder: (defaultStyles) => {
-      return {
-        ...defaultStyles,
-        color: "#000",
-      };
-    },
-  };
-
-  const myStylesModal = {
-    modalContainerBg: "rgba(0, 0, 0, 0.7)",
-    bg: "#fff",
-    width: "200px",
-    height: "200px",
-    radius: "5px",
-    messageColor: "#000",
-    messageFontSize: "1em",
-    buttonColor: "#000",
-    buttonBg: "#fff",
-    buttonWidth: "30px",
-    buttonHeight: "30px",
-    buttonHoverColor: "#fff",
-    buttonHoverBg: "#000",
   };
 
   return (
@@ -89,7 +68,6 @@ const Form = () => {
               {errors?.firstname && errors.firstname.message}
             </p>
           </div>
-
           <div className="input">
             <label htmlFor="lastname">Last Name</label>
             <input
@@ -102,7 +80,6 @@ const Form = () => {
               {errors?.lastname && errors.lastname.message}
             </p>
           </div>
-
           <div className="input">
             <label htmlFor="dateofbirth">Date of Birth</label>
             <input
@@ -127,7 +104,6 @@ const Form = () => {
               {errors?.startdate && errors.startdate.message}
             </p>
           </div>
-
           <div className="field_address">
             <fieldset className="address">
               <legend>Address</legend>
@@ -189,7 +165,6 @@ const Form = () => {
               </div>
             </fieldset>
           </div>
-
           <div className="select_department">
             <label htmlFor="react-select-5-input">Department</label>
             <Controller
@@ -211,7 +186,6 @@ const Form = () => {
             </small>
           </div>
         </div>
-
         <div className="btn-submit">
           <button>Submit</button>
         </div>

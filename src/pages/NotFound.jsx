@@ -1,9 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/NotFound.css";
 
-import IMG404 from "../images/404.png";
+
+// error 404 page
 const NotFound = () => {
+  const navigate = useNavigate()
   return (
     <>
       <main className="main_404page">
@@ -13,11 +15,9 @@ const NotFound = () => {
             <p>Ooops page not found</p>
           </div>
           <div className="btn_back_home">
-            <NavLink to="/" alt="link_back_to_home">
-              <div>
-                <p>Go Back</p>
-              </div>
-            </NavLink>
+            <button onClick={()=> navigate("/") }>
+              Go Back
+            </button>
           </div>
         </div>
       </main>

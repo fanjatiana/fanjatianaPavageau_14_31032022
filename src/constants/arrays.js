@@ -1,3 +1,4 @@
+// states list array
 export const states = [
   {
     label: "Alabama",

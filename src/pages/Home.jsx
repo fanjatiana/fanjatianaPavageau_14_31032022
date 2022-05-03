@@ -6,6 +6,8 @@ import Arrow from "../images/arrow.svg";
 import AddEmployee from "../images/add_employee.svg";
 import List from "../images/employees_list.svg";
 
+
+// home page
 const Home = () => {
   return (
     <>

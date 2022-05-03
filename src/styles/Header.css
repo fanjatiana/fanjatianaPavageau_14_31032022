@@ -4,11 +4,7 @@ header {
   border: 1px #2d2d2d solid;
   height: 600px;
   margin: auto 1em;
-  /*position: fixed;*/
-  top: 20%;
-  left: 0;
   border-radius: 5px;
-  /* background-image: url("../images//wallpaper.jpeg");*/
 }
 
 .banner {
@@ -35,17 +31,17 @@ header {
   border-radius: 50px;
 }
 
-
+/* responsive mobile and tablet */
 @media all and (min-width: 320px) and (max-width: 1024px) {
-  header{
+  header {
     width: 98%;
     border-radius: 0;
-    margin:0 auto;
+    margin: 0 auto;
     height: auto;
   }
 
-  .banner{
-    padding:0;
+  .banner {
+    padding: 0;
     height: auto;
     display: flex;
     flex-wrap: wrap;

@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import LogoHRnet from "../images/logo_hrnet.png";
 import "../styles/Header.css";
 
+// header of the application pages
 const Header = () => {
   return (
     <header>

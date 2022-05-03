@@ -3,13 +3,16 @@ import { NavLink } from "react-router-dom";
 import "../styles/Nav.css";
 import List from "../images/employees_list.svg";
 import AddEmployee from "../images/add_employee.svg";
-import Setting from "../images/setting.svg";
-const Nav = () => {
-  const [isActive, setActive] = useState(false);
 
+// app navigation
+const Nav = () => {
+  
+  // underline navigation links (css) when active
+  const [isActive, setActive] = useState(false);
   const handleClick = () => {
     setActive(isActive);
   };
+
   return (
     <div className="block_nav_links">
       <nav>

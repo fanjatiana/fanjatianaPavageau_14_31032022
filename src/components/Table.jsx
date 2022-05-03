@@ -7,7 +7,10 @@ import {
 } from "react-table/dist/react-table.development";
 import GlobaleFilter from "./GlobaleFilter";
 
+// employees list table
 const Table = ({ columns, data }) => {
+
+  // useTable : Provides the behavior and accessibility implementation for a table component
   const {
     state,
     preGlobalFilteredRows,
@@ -15,7 +18,6 @@ const Table = ({ columns, data }) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
     page,
     canPreviousPage,

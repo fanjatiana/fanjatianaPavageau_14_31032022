@@ -34,6 +34,7 @@ table {
   margin-top: 1em;
 }
 
+/* responsive tablet */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .employees_list_container {
     width: 100%;

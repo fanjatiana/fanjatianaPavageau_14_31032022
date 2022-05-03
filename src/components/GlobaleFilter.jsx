@@ -1,6 +1,7 @@
 import React from "react";
 import { useAsyncDebounce } from "react-table/dist/react-table.development";
 
+// table search bar
 const GlobaleFilter = ({
   preGlobalFilteredRows,
   globalFilter,

@@ -3,7 +3,12 @@ import { useAppSelector } from "../app/hooks";
 import Table from "../components/Table";
 import Header from "../containers/Header";
 import "../styles/EmployeesList.css";
+
+// employee list page
 const EmployeeList = () => {
+  const employee = useAppSelector((state) => state.employees);
+
+  // React.useMemo() : Hook returns a memoized value.
   const columns = React.useMemo(
     () => [
       {
@@ -45,8 +50,9 @@ const EmployeeList = () => {
     ],
     []
   );
-  const employee = useAppSelector((state) => state.employees);
-  const data = React.useMemo(() => employee, []);
+
+  const data = React.useMemo(() => employee, [employee]);
+
   return (
     <>
       <Header />

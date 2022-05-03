@@ -7397,10 +7397,10 @@ react-is@^17.0.1, react-is@^17.0.2:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-nmp-modal@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/react-nmp-modal/-/react-nmp-modal-2.6.0.tgz#5d1eda8ebaf0d93602a0802ef80b0414a882ae86"
-  integrity sha512-6hQX1Fx1lbD0u5SS78BHOV4mG02r0EjhctEJCstKFnA4ocTApk57Gg+aDB8ZyjKF6jbdHFbeYHgAngUb9GFpUA==
+react-nmp-modal@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-nmp-modal/-/react-nmp-modal-3.0.0.tgz#715375cf3c1c0ae9b6af98b4f1b3f2c864134791"
+  integrity sha512-1wmIXRUFwcEUJ0l5tf3yGGTQTNlKuCP/0j6MpyvKq5zTXdxOFXlhB8x5NO8XjwLXvpDoLAM50UXuM1rzBFnDnw==
   dependencies:
     styled-components "^5.3.5"
 

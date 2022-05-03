@@ -3,16 +3,15 @@
   font-size: 0.8em;
 }
 
-.create-employee-container h2{
-  color:#FFF;
-} 
+.create-employee-container h2 {
+  color: #fff;
+}
 
 .create-employee-form {
   border: 1px rgba(0, 0, 0, 0.171) solid;
   padding: 1em 0;
   border-radius: 5px;
   width: 40%;
-  /*height: 1020px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,13 +22,12 @@
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.form_container{
-    width: 80%;
-    /*height: 950px;*/
+.form_container {
+  width: 80%;
 }
 
 .form_container label {
-  color: #FFF
+  color: #fff;
 }
 
 .form_container .input {
@@ -37,35 +35,29 @@
   margin: 0 auto;
   justify-content: center;
   flex-direction: column;
-
-  
- 
 }
 
 .form_container div input {
-    height: 30px;
-    border-radius: 8px;
+  height: 30px;
+  border-radius: 8px;
 }
 
 .field_address legend {
-  color: #FFF;
+  color: #fff;
 }
-.btn-submit{
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    margin:2em 0 0;
-    height: 40px;
+.btn-submit {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  margin: 2em 0 0;
+  height: 40px;
 }
 
 .btn-submit button {
-    width: 100%;
+  width: 100%;
 }
 
-.form_container .select_department{
+.form_container .select_department {
   margin-top: 1em;
   height: 60px;
 }
-
-
-

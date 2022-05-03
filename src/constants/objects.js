@@ -1,3 +1,4 @@
+// form control + error messages
 export const registerOptions = {
   states: { required: "Please select a state" },
   department: { required: "Please select a department" },
@@ -58,3 +59,5 @@ export const registerOptions = {
     },
   },
 };
+
+
