@@ -28,15 +28,15 @@ const Form = () => {
   const handleRegistration = (data) => {
     dispatch(
       addNewEmployee({
-        firstName: data.firstname,
-        lastName: data.lastname,
-        dateOfBirth: data.dateofbirth,
-        startDate: data.startdate,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        dateOfBirth: data.dateofBirth,
+        startDate: data.startDate,
         department: data.department,
         street: data.street,
         city: data.city,
         states: data.states,
-        zipCode: data.zipcode,
+        zipCode: data.zipCode,
       })
     );
     setIsShowing(true);
@@ -57,51 +57,51 @@ const Form = () => {
       >
         <div className="form_container">
           <div className="input">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="firstName">First Name</label>
             <input
-              id="firstname"
-              name="firstname"
+              id="firstName"
+              name="firstName"
               type="text"
-              {...register("firstname", registerOptions.firstname)}
+              {...register("firstName", registerOptions.firstName)}
             />
             <p className="text-danger">
-              {errors?.firstname && errors.firstname.message}
+              {errors?.firstName && errors.firstName.message}
             </p>
           </div>
           <div className="input">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastName">Last Name</label>
             <input
-              id="lastname"
-              name="lastname"
+              id="lastName"
+              name="lastName"
               type="text"
-              {...register("lastname", registerOptions.lastname)}
+              {...register("lastName", registerOptions.lastName)}
             />
             <p className="text-danger">
-              {errors?.lastname && errors.lastname.message}
+              {errors?.lastName && errors.lastName.message}
             </p>
           </div>
           <div className="input">
-            <label htmlFor="dateofbirth">Date of Birth</label>
+            <label htmlFor="dateofBirth">Date of Birth</label>
             <input
-              id="dateofbirth"
+              id="dateofBirth"
               type="date"
-              name="dateofbirth"
-              {...register("dateofbirth", registerOptions.dateofbirth)}
+              name="dateofBirth"
+              {...register("dateofBirth", registerOptions.dateofBirth)}
             />
             <p className="text-danger">
-              {errors?.dateofbirth && errors.dateofbirth.message}
+              {errors?.dateofBirth && errors.dateofBirth.message}
             </p>
           </div>
           <div className="input">
-            <label htmlFor="startdate">Start Date</label>
+            <label htmlFor="startDate">Start Date</label>
             <input
-              id="startdate"
+              id="startDate"
               type="date"
-              name="startdate"
-              {...register("startdate", registerOptions.startdate)}
+              name="startDate"
+              {...register("startDate", registerOptions.startDate)}
             />
             <p className="text-danger">
-              {errors?.startdate && errors.startdate.message}
+              {errors?.startDate && errors.startDate.message}
             </p>
           </div>
           <div className="field_address">
@@ -152,15 +152,15 @@ const Form = () => {
                 </small>
               </div>
               <div className="input">
-                <label htmlFor="zip-code">Zip Code</label>
+                <label htmlFor="zipCode">Zip Code</label>
                 <input
-                  id="zip-code"
+                  id="zipCode"
                   type="text"
-                  name="zipcode"
-                  {...register("zipcode", registerOptions.zipcode)}
+                  name="zipCode"
+                  {...register("zipCode", registerOptions.zipCode)}
                 />
                 <p className="text-danger">
-                  {errors?.zipcode && errors.zipcode.message}
+                  {errors?.zipCode && errors.zipCode.message}
                 </p>
               </div>
             </fieldset>
@@ -187,7 +187,7 @@ const Form = () => {
           </div>
         </div>
         <div className="btn-submit">
-          <button>Submit</button>
+          <button aria-label='Submit'>Submit</button>
         </div>
       </form>
       {isShowing ? (

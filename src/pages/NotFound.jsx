@@ -15,7 +15,7 @@ const NotFound = () => {
             <p>Ooops page not found</p>
           </div>
           <div className="btn_back_home">
-            <button onClick={()=> navigate("/") }>
+            <button aria-label='Back to the homepage' onClick={()=> navigate("/") }>
               Go Back
             </button>
           </div>

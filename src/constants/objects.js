@@ -2,62 +2,85 @@
 export const registerOptions = {
   states: { required: "Please select a state" },
   department: { required: "Please select a department" },
-  firstname: {
-    required: "first name is required",
+  firstName: {
+    required: "First name is required",
     maxLength: {
       value: 30,
-      message: "firstname must have at least 30 characters",
+      message: "First name must have at least 30 characters",
     },
     pattern: {
       value: /^[A-Za-z ,.'-]+$/i,
-      message: "firstname must not have number",
+      message:
+        "First name must not have numbers,only special characters allowed: ' , . -",
     },
   },
 
-  lastname: {
-    required: "last name is required",
+  lastName: {
+    required: "Last name is required",
     maxLength: {
       value: 30,
-      message: "lastname must have at least 30 characters",
+      message: "Last name must have at least 30 characters",
     },
     pattern: {
       value: /^[A-Za-z ,.'-]+$/i,
-      message: "lastname must not have number",
+      message:
+        "Last name must not have numbers,only special characters allowed: ' , . -",
     },
   },
 
-  dateofbirth: {
-    required: "date of birth is required",
-  },
-
-  startdate: {
-    required: "start date is required",
+  dateofBirth: {
+    required: "Date of birth is required",
     min: {
-      value: "1940-01-01",
-      message: "bad date",
+      value: "1900-01-01",
+      message: "Bad date",
+    },
+    max: {
+      value: "2009-01-01",
+      message: "Bad date",
+    },
+  },
+
+  startDate: {
+    required: "Start date is required",
+    min: {
+      value: "1950-01-01",
+      message: "Bad date",
     },
   },
 
   street: {
-    required: "street is required",
+    required: "Street is required",
     pattern: {
       value: "([0-9a-zA-Z,. ]*) ?([0-9]{5}) ?([a-zA-Z]*)",
-      message: "street not have special characters",
+    },
+    maxLength: {
+      value: 30,
+      message: "Street must have at least 30 characters",
     },
   },
-  city: { required: "city is required" },
+  city: {
+    required: "City is required",
+    pattern: {
+      value: /^[A-Za-z ,.'-]+$/i,
+      message:
+        "City must not have numbers,only special characters allowed: ' , . -",
+    },
+    maxLength: {
+      value: 30,
+      message: "City must have at least 30 characters",
+    },
+  },
 
-  zipcode: {
-    required: "zip code is required",
+  zipCode: {
+    required: "Zip code is required",
     pattern: {
       value: /^[0-9]{5}(?:(-| )[0-9]{4})?$/,
-      message: "write 5 numbers like this : NNNNN",
+      message:
+        "No string, no special characters , write 5 numbers like this : NNNNN",
     },
     max: {
       value: 99950,
-      message: "bad zip code",
+      message: "Bad zip code",
     },
   },
 };
-
-
