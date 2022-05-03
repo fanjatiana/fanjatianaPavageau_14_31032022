@@ -12,7 +12,7 @@ const Header = () => {
         <div className="block_logo_hrnet">
           <NavLink to="/" className="logo_hrnet_link">
             <h1>HRnet</h1>
-            <img src={LogoHRnet} alt="HRnet" />
+            <img src={LogoHRnet} alt="HRnet" loading="lazy"/>
           </NavLink>
         </div>
         <Nav />

@@ -23,7 +23,7 @@ const Nav = () => {
               className={isActive ? " active" : "create_employee_link"}
               onClick={handleClick}
             >
-              <img src={AddEmployee} alt="add employee icon" />
+              <img src={AddEmployee} alt="add employee icon" loading="lazy"/>
               <h2>Create Employee</h2>
             </NavLink>
           </li>
@@ -33,7 +33,7 @@ const Nav = () => {
               className={isActive ? " active" : "employee_list_link"}
               onClick={handleClick}
             >
-              <img src={List} alt="list icone" />
+              <img src={List} alt="list icone" loading="lazy"/>
               <h2>Employee List</h2>
             </NavLink>
           </li>
