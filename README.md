@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ![Languages](/src/images/languages-css-_-javascript.svg)
 
-![Libraries](/src/images/libraries-react-js-_-react-hook-form-_-react-table-_-react-select.svg)
+![Libraries](/src/images//libraries-react-js-_-react-hook-form-_-react-table-_-react-select-_-redux.svg)
 
 ![Package](/src/images/package-npm-react-nmp-modal.svg)
 
